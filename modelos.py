@@ -33,6 +33,15 @@ class Categoria(db.Model):
     nombre = db.Column(db.String(256))
     descripcion = db.Column(db.String(256))
 
+class Inventario(db.Model):
+    __tablename__ = 'productos'
+    id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(256))
+    fecha_entrada = db.Column(db.DateTime)
+    fecha_vence = db.Column(db.DateTime)
+    estado = db.Column(db.String(256))
+    stock = db.Column(db.Integer)
+
 class DetalleProductos(db.Model):
     __tablename__ = 'detalle_productos'
     id = db.Column(db.Integer, primary_key=True)
@@ -47,41 +56,15 @@ class Productos(db.Model):
     fecha_entrada = db.Column(db.DateTime)
     fecha_vence = db.Column(db.DateTime)
     estado = db.Column(db.String(256))
-    categoria_id = db.Column(db.Integer, db.ForeignKey('categoria.id'))
-    detalle_productos_id = db.Column(db.Integer, db.ForeignKey('detalle_productos.id'))
-
-class DetalleProductosIngresados(db.Model):
-    __tablename__ = 'detalle_productos_ingresados'
-    id = db.Column(db.Integer, primary_key=True)
-    cantidad = db.Column(db.Integer)
-    precio_entrada = db.Column(db.Integer)
-    precio_salida = db.Column(db.Integer)
-
-class ProductosIngresados(db.Model):
-    __tablename__ = 'productos_ingresados'
-    id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(256))
-    fecha_entrada = db.Column(db.DateTime)
-    fecha_vence = db.Column(db.DateTime)
-    estado = db.Column(db.String(256))
     usuarios_id = db.Column(db.Integer, db.ForeignKey('usuarios.id'))
     categoria_id = db.Column(db.Integer, db.ForeignKey('categoria.id'))
-    detalle_productos_id = db.Column(db.Integer, db.ForeignKey('detalle_productos_ingresados.id'))
-
-class Inventario(db.Model):
-    __tablename__ = 'inventario'
-    id = db.Column(db.Integer, primary_key=True)
-    stock = db.Column(db.Integer)
-    categoria_id = db.Column(db.Integer, db.ForeignKey('categoria.id'))
-    productos_id = db.Column(db.Integer, db.ForeignKey('productos.id'))
-    productos_ingresados_id = db.Column(db.Integer, db.ForeignKey('productos_ingresados.id'))
+    detalle_productos_id = db.Column(db.Integer, db.ForeignKey('detalle_productos.id'))
 
 class DetalleFactura(db.Model):
     __tablename__ = 'detalle_factura'
     id = db.Column(db.Integer, primary_key=True)
     cantidad = db.Column(db.Integer)
-    producto_id = db.Column(db.Integer, db.ForeignKey('productos.id'))
-    detalle_productos_id = db.Column(db.Integer, db.ForeignKey('detalle_productos.id'))  
+    inventario_id = db.Column(db.Integer, db.ForeignKey('inventario.id'))
 
 class Factura(db.Model):
     __tablename__ = 'factura'
@@ -90,14 +73,15 @@ class Factura(db.Model):
     monto_total = db.Column(db.Integer)
     precio_total = db.Column(db.Integer)
     usuario_id = db.Column(db.Integer, db.ForeignKey('usuarios.id'))
+    detalle_factura_id = db.Column(db.Integer, db.ForeignKey('detalle_factura.id'))
 
 class Movimientos(db.Model):
     __tablename__ = 'movimientos'
     id = db.Column(db.Integer, primary_key=True)
     fecha = db.Column(db.DateTime)
     tipo = db.Column(db.String(256))
-    factura_id = db.Column(db.Integer, db.ForeignKey('factura.id'))
-    productos_id = db.Column(db.Integer, db.ForeignKey('productos.id'))
+    detalle_factura_id = db.Column(db.Integer, db.ForeignKey('detalle_factura.id'))
+    inventario_id = db.Column(db.Integer, db.ForeignKey('inventario.id'))
 
 class Alerta(db.Model):
     __tablename__ = 'alerta'
@@ -105,7 +89,7 @@ class Alerta(db.Model):
     nombre = db.Column(db.String(256))
     stock_minimo = db.Column(db.Integer)
     stock = db.Column(db.Integer)
-    productos_id = db.Column(db.Integer, db.ForeignKey('productos.id'))
+    inventario_id = db.Column(db.Integer, db.ForeignKey('inventario.id'))
 
 class EnumADiccionario(fields.Field):
     def _serialize(self, value, attr, obj, **kwargs):
@@ -143,20 +127,6 @@ class ProductosSchema(SQLAlchemyAutoSchema):
     detalle_productos = fields.Nested(DetalleProductosSchema)  
     class Meta:
         model = Productos
-        include_relationships = True
-        load_instance = True
-
-class DetalleProductosIngresadosSchema(SQLAlchemyAutoSchema):
-    class Meta:
-        model = DetalleProductosIngresados
-        include_relationships = True
-        load_instance = True
-
-class ProductosIngresadosSchema(SQLAlchemyAutoSchema):
-    categoria = fields.Nested(CategoriaSchema)
-    detalle_productos = fields.Nested(DetalleProductosIngresadosSchema) 
-    class Meta:
-        model = ProductosIngresados
         include_relationships = True
         load_instance = True
 
