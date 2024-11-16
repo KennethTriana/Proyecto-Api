@@ -1,7 +1,11 @@
 click==8.0.1
 Flask==2.0.3
 Flask-SQLAlchemy==2.5.1
+<<<<<<< HEAD
 greenlet==3.1.1
+=======
+greenlet==1.1.0
+>>>>>>> 6a723bdab1a4b184e29ebb36ac2d5c8a3889931c
 itsdangerous==2.0.1
 Jinja2==3.0.1
 MarkupSafe==3.0.2
