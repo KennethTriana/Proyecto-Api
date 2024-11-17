@@ -1,1 +1,1 @@
-from flaskr.vistas import *
+from .vistacategoria import *
