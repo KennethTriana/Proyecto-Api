@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from marshmallow import fields
 from flask_sqlalchemy import SQLAlchemy
 import enum
@@ -166,3 +167,6 @@ class AlertaSchema(SQLAlchemyAutoSchema):
         model = Alerta
         include_relationships = True
         load_instance = True
+=======
+#Tablas de la base de datos y serealización -> Nelson
+>>>>>>> 5f37b97a19a2008d137279961b76fc0fd7f1a86b
