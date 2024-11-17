@@ -1,0 +1,23 @@
+click==8.0.1
+Flask==2.0.3
+Flask-SQLAlchemy==2.5.1
+<<<<<<< HEAD
+greenlet==3.1.1
+=======
+<<<<<<< HEAD
+greenlet==3.1.1
+=======
+greenlet==1.1.0
+>>>>>>> 6a723bdab1a4b184e29ebb36ac2d5c8a3889931c
+>>>>>>> 5f37b97a19a2008d137279961b76fc0fd7f1a86b
+itsdangerous==2.0.1
+Jinja2==3.0.1
+MarkupSafe==3.0.2
+SQLAlchemy==1.4.49
+Werkzeug==2.0.3
+Flask-Migrate==4.0.7
+Flask-MySQLdb==2.0.0
+marshmallow==3.23.0
+marshmallow-sqlalchemy==1.1.0
+mysql==0.0.3
+PyMySQL==1.1.1  
