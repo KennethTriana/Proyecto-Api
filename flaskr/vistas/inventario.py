@@ -6,7 +6,11 @@ inventario_schema = InventarioSchema()
 
 class VistaInventario(Resource):
     def get(self): 
+<<<<<<< HEAD
         return [inventario_schema.dump(Inventario) for Inventario in Inventario.query.all()]
+=======
+        return [inventario_schema.dump(Productos) for Inventario in Inventario.query.all()]
+>>>>>>> 5f37b97a19a2008d137279961b76fc0fd7f1a86b
 
     def post(self):  
         nuevo_producto = Productos(
