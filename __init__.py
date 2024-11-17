@@ -1,1 +1,1 @@
-from .vistasCategoria import *
+from .vistacategoria import *
