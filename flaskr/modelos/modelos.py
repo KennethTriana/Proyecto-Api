@@ -1,7 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 1eec5f1ca3b1ae543c77fc627043c268114a0236
+=======
+>>>>>>> 7e7301d4683567745a9015d3cc9b53150fb3f653
 from marshmallow import fields
 from flask_sqlalchemy import SQLAlchemy
 import enum
@@ -9,10 +12,13 @@ import enum
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 from werkzeug.security import generate_password_hash, check_password_hash
 
 =======
 >>>>>>> 1eec5f1ca3b1ae543c77fc627043c268114a0236
+=======
+>>>>>>> 7e7301d4683567745a9015d3cc9b53150fb3f653
 db = SQLAlchemy()
 
 from flask_sqlalchemy import SQLAlchemy
@@ -32,14 +38,19 @@ class Usuarios(db.Model):
     apellidos = db.Column(db.String(256))
     correo = db.Column(db.String(256))
 <<<<<<< HEAD
+<<<<<<< HEAD
     contrasena_hash = db.Column(db.String(255))
 =======
     contrasena = db.Column(db.String(256))
 >>>>>>> 1eec5f1ca3b1ae543c77fc627043c268114a0236
+=======
+    contrasena = db.Column(db.String(256))
+>>>>>>> 7e7301d4683567745a9015d3cc9b53150fb3f653
     telefono = db.Column(db.Integer)
     direccion = db.Column(db.String(256))
     cargo_id = db.Column(db.Integer, db.ForeignKey('cargo.id'))
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     @property
     def contrasena(self):
@@ -54,6 +65,8 @@ class Usuarios(db.Model):
 
 =======
 >>>>>>> 1eec5f1ca3b1ae543c77fc627043c268114a0236
+=======
+>>>>>>> 7e7301d4683567745a9015d3cc9b53150fb3f653
 class Categoria(db.Model):
     __tablename__ = 'categoria'
     id = db.Column(db.Integer, primary_key=True)
@@ -193,10 +206,16 @@ class AlertaSchema(SQLAlchemyAutoSchema):
         model = Alerta
         include_relationships = True
 <<<<<<< HEAD
+<<<<<<< HEAD
         load_instance = True
 =======
+=======
+>>>>>>> 7e7301d4683567745a9015d3cc9b53150fb3f653
         load_instance = True
 =======
 #Tablas de la base de datos y serealización -> Nelson
 >>>>>>> 5f37b97a19a2008d137279961b76fc0fd7f1a86b
+<<<<<<< HEAD
 >>>>>>> 1eec5f1ca3b1ae543c77fc627043c268114a0236
+=======
+>>>>>>> 7e7301d4683567745a9015d3cc9b53150fb3f653

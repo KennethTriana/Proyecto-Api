@@ -3,12 +3,17 @@ from flaskr import create_app
 from flaskr.modelos.modelos import Cargo, Usuarios, Categoria, DetalleProductos, Productos, Inventario, Movimientos, DetalleFactura, Factura, Alerta
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 from flaskr.modelos.modelos import Cargo, Usuarios, Categoria, DetalleProductos, Productos, Inventario, Movimientos, DetalleFactura, Factura, Alerta
 =======
 <<<<<<< HEAD
 from flaskr.modelos.modelos import Cargo, Usuarios, Categoria, DetalleProductos, DetalleProductosIngresados, ProductosIngresados, Inventario, Movimientos, DetalleFactura, Factura, Alerta
 >>>>>>> 5f37b97a19a2008d137279961b76fc0fd7f1a86b
 >>>>>>> 1eec5f1ca3b1ae543c77fc627043c268114a0236
+=======
+from flaskr.modelos.modelos import Cargo, Usuarios, Categoria, DetalleProductos, DetalleProductosIngresados, ProductosIngresados, Inventario, Movimientos, DetalleFactura, Factura, Alerta
+>>>>>>> 5f37b97a19a2008d137279961b76fc0fd7f1a86b
+>>>>>>> 7e7301d4683567745a9015d3cc9b53150fb3f653
 from flaskr.modelos.modelos import db 
 from flask_restful import Api
 from flaskr.vistas.usuarios import VistaUsuarios, VistaLogin, VistaSignIn
@@ -25,7 +30,10 @@ from flask_jwt_extended import JWTManager
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 7e7301d4683567745a9015d3cc9b53150fb3f653
 =======
 from flaskr.modelos.modelos import cargo, usuarios, categoria, detalle_productos, productos, detalle_productos_ingresados, productos_ingresados, inventario, movimientos, detalle_factura, factura, alerta
 from .modelos import db 
@@ -33,7 +41,10 @@ from flask_restful import Api
 from vistas import vistas
 >>>>>>> 6a723bdab1a4b184e29ebb36ac2d5c8a3889931c
 >>>>>>> 5f37b97a19a2008d137279961b76fc0fd7f1a86b
+<<<<<<< HEAD
 >>>>>>> 1eec5f1ca3b1ae543c77fc627043c268114a0236
+=======
+>>>>>>> 7e7301d4683567745a9015d3cc9b53150fb3f653
 
 app = create_app('default')
 app_context = app.app_context()
@@ -45,10 +56,14 @@ api = Api(app)
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 5f37b97a19a2008d137279961b76fc0fd7f1a86b
 >>>>>>> 1eec5f1ca3b1ae543c77fc627043c268114a0236
+=======
+>>>>>>> 5f37b97a19a2008d137279961b76fc0fd7f1a86b
+>>>>>>> 7e7301d4683567745a9015d3cc9b53150fb3f653
 api.add_resource(VistaUsuarios, '/usuarios', '/usuarios/<int:id>')
 api.add_resource(VistaAlerta, '/alerta', '/alerta/<int:id>')
 api.add_resource(VistaCargo, '/cargo', '/cargo/<int:id>')
@@ -108,8 +123,11 @@ jwt = JWTManager(app)
     #print(Productos.query.all())
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
     #print(Productos.query.all())
 =======
+=======
+>>>>>>> 7e7301d4683567745a9015d3cc9b53150fb3f653
     #print(Productos.query.all())
 =======
 api.add_resource(VistaUsuarios, '/usuarios')
@@ -120,4 +138,7 @@ with app.app_context():
     #Vista Productos --Nelson
 >>>>>>> 6a723bdab1a4b184e29ebb36ac2d5c8a3889931c
 >>>>>>> 5f37b97a19a2008d137279961b76fc0fd7f1a86b
+<<<<<<< HEAD
 >>>>>>> 1eec5f1ca3b1ae543c77fc627043c268114a0236
+=======
+>>>>>>> 7e7301d4683567745a9015d3cc9b53150fb3f653
