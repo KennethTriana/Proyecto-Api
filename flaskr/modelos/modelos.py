@@ -1,11 +1,18 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 1eec5f1ca3b1ae543c77fc627043c268114a0236
 from marshmallow import fields
 from flask_sqlalchemy import SQLAlchemy
 import enum
 
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 
+<<<<<<< HEAD
 from werkzeug.security import generate_password_hash, check_password_hash
 
+=======
+>>>>>>> 1eec5f1ca3b1ae543c77fc627043c268114a0236
 db = SQLAlchemy()
 
 from flask_sqlalchemy import SQLAlchemy
@@ -24,11 +31,16 @@ class Usuarios(db.Model):
     nombres = db.Column(db.String(256))
     apellidos = db.Column(db.String(256))
     correo = db.Column(db.String(256))
+<<<<<<< HEAD
     contrasena_hash = db.Column(db.String(255))
+=======
+    contrasena = db.Column(db.String(256))
+>>>>>>> 1eec5f1ca3b1ae543c77fc627043c268114a0236
     telefono = db.Column(db.Integer)
     direccion = db.Column(db.String(256))
     cargo_id = db.Column(db.Integer, db.ForeignKey('cargo.id'))
 
+<<<<<<< HEAD
     @property
     def contrasena(self):
         raise attributeError("La contraseña no es un atributo legible.")
@@ -40,6 +52,8 @@ class Usuarios(db.Model):
     def verificar_contrasena(self, password):
         return check_password_hash(self.contrasena_hash, password) 
 
+=======
+>>>>>>> 1eec5f1ca3b1ae543c77fc627043c268114a0236
 class Categoria(db.Model):
     __tablename__ = 'categoria'
     id = db.Column(db.Integer, primary_key=True)
@@ -178,4 +192,11 @@ class AlertaSchema(SQLAlchemyAutoSchema):
     class Meta:
         model = Alerta
         include_relationships = True
+<<<<<<< HEAD
         load_instance = True
+=======
+        load_instance = True
+=======
+#Tablas de la base de datos y serealización -> Nelson
+>>>>>>> 5f37b97a19a2008d137279961b76fc0fd7f1a86b
+>>>>>>> 1eec5f1ca3b1ae543c77fc627043c268114a0236

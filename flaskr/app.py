@@ -1,5 +1,14 @@
 from flaskr import create_app
+<<<<<<< HEAD
 from flaskr.modelos.modelos import Cargo, Usuarios, Categoria, DetalleProductos, Productos, Inventario, Movimientos, DetalleFactura, Factura, Alerta
+=======
+<<<<<<< HEAD
+from flaskr.modelos.modelos import Cargo, Usuarios, Categoria, DetalleProductos, Productos, Inventario, Movimientos, DetalleFactura, Factura, Alerta
+=======
+<<<<<<< HEAD
+from flaskr.modelos.modelos import Cargo, Usuarios, Categoria, DetalleProductos, DetalleProductosIngresados, ProductosIngresados, Inventario, Movimientos, DetalleFactura, Factura, Alerta
+>>>>>>> 5f37b97a19a2008d137279961b76fc0fd7f1a86b
+>>>>>>> 1eec5f1ca3b1ae543c77fc627043c268114a0236
 from flaskr.modelos.modelos import db 
 from flask_restful import Api
 from flaskr.vistas.usuarios import VistaUsuarios, VistaLogin, VistaSignIn
@@ -13,6 +22,18 @@ from flaskr.vistas.inventario import VistaInventario
 from flaskr.vistas.movimientos import VistaMovimientos
 from flaskr.vistas.productos import VistaProductos
 from flask_jwt_extended import JWTManager
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+from flaskr.modelos.modelos import cargo, usuarios, categoria, detalle_productos, productos, detalle_productos_ingresados, productos_ingresados, inventario, movimientos, detalle_factura, factura, alerta
+from .modelos import db 
+from flask_restful import Api
+from vistas import vistas
+>>>>>>> 6a723bdab1a4b184e29ebb36ac2d5c8a3889931c
+>>>>>>> 5f37b97a19a2008d137279961b76fc0fd7f1a86b
+>>>>>>> 1eec5f1ca3b1ae543c77fc627043c268114a0236
 
 app = create_app('default')
 app_context = app.app_context()
@@ -21,6 +42,13 @@ db.init_app(app)
 db.create_all()
 
 api = Api(app)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 5f37b97a19a2008d137279961b76fc0fd7f1a86b
+>>>>>>> 1eec5f1ca3b1ae543c77fc627043c268114a0236
 api.add_resource(VistaUsuarios, '/usuarios', '/usuarios/<int:id>')
 api.add_resource(VistaAlerta, '/alerta', '/alerta/<int:id>')
 api.add_resource(VistaCargo, '/cargo', '/cargo/<int:id>')
@@ -76,4 +104,20 @@ jwt = JWTManager(app)
     #print(Inventario.query.all())
     #print(Movimientos.query.all())
     #print(Productos_Ingresados.query.all())
+<<<<<<< HEAD
     #print(Productos.query.all())
+=======
+<<<<<<< HEAD
+    #print(Productos.query.all())
+=======
+    #print(Productos.query.all())
+=======
+api.add_resource(VistaUsuarios, '/usuarios')
+
+with app.app_context():
+    #Vista Usuarios --> Nixson
+    #Vista Categoria --> Nicol 
+    #Vista Productos --Nelson
+>>>>>>> 6a723bdab1a4b184e29ebb36ac2d5c8a3889931c
+>>>>>>> 5f37b97a19a2008d137279961b76fc0fd7f1a86b
+>>>>>>> 1eec5f1ca3b1ae543c77fc627043c268114a0236
